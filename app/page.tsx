@@ -83,7 +83,7 @@ const sampleProducts = [
     image: "https://i.ibb.co/7bQQYkX/jean.jpg",
     name: "Jean",
     price: 100,
-    link: "/",
+    link: "/products/jean",
   },
   {
     image: "https://i.ibb.co/7bQQYkX/jean.jpg",
@@ -113,8 +113,6 @@ type PageProps = {
 
 export default function page(props: PageProps) {
   const category = props.searchParams.category;
-
-  if (!category) return redirect("/?category=women");
 
   return (
     <div>
