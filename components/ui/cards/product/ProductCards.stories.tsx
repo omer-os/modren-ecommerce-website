@@ -30,10 +30,10 @@ export const Horizontal = () => {
     </div>
   );
 };
-export const Vertical = () => (
-  <div className="flex gap-4">
-    <ProductVerticalCard />
-    <ProductVerticalCard />
-    <ProductVerticalCard />
-  </div>
-);
+// export const Vertical = () => (
+//   <div className="flex gap-4">
+//     <ProductVerticalCard />
+//     <ProductVerticalCard />
+//     <ProductVerticalCard />
+//   </div>
+// );
