@@ -1,4 +1,7 @@
+import UiButton from "components/components/ui/buttons/UiButton";
 import UiProductImageGallery from "components/components/ui/gallery/UiProductImageGallery";
+import UiProductColor from "components/components/ui/tabs/buttongroup/UiProductColor";
+import UiProductSize from "components/components/ui/tabs/buttongroup/UiProductSize";
 import Link from "next/link";
 
 const images = [
@@ -8,7 +11,13 @@ const images = [
   "https://i.ibb.co/7bQQYkX/jean.jpg",
 ];
 
-export default function page() {
+type PageProps = {
+  searchParams: {
+    color?: string;
+  };
+};
+
+export default function page(props: PageProps) {
   return (
     <div className="flex lg:flex-row flex-col gap-10">
       <UiProductImageGallery />
@@ -28,6 +37,29 @@ export default function page() {
           only five centuries, but also the leap into electronic typesetting,
           remaining essentially unchanged.
         </div>
+
+        <div className="flex items-center justify-between flex-wrap mt-6 ">
+          <div className="flex flex-col mt-5">
+            <div className="font-bold">Size:</div>
+
+            <div className="mt-3">
+              <UiProductSize sizes={["S", "M", "L", "XL"]} />
+            </div>
+          </div>
+          <div className="flex flex-col mt-5">
+            <div className="font-bold">Color:</div>
+
+            <div className="mt-3">
+              <UiProductColor
+                colors={["DC2626", "E891B2", "10B981", "0EA5E9"]}
+              />
+            </div>
+          </div>
+        </div>
+
+        <UiButton rounded={"full"} className="mt-10" w={"full"}>
+          Add To Card
+        </UiButton>
       </div>
     </div>
   );

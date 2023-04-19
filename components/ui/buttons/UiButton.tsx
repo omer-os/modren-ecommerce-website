@@ -2,7 +2,7 @@
 import { VariantProps, cva } from "class-variance-authority";
 
 const buttonStyles = cva(
-  `py-2 px-3 rounded flex items-center gap-2 active:scale-95 transition-all active:brightness-90 hover:brightness-110 fill-white brightness-100`,
+  `py-2 px-3 rounded flex justify-center gap-2 active:scale-95 transition-all active:brightness-90 hover:brightness-110 fill-white brightness-100`,
   {
     variants: {
       variant: {
