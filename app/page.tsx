@@ -2,6 +2,7 @@ import UiAvatar from "components/components/ui/Avatars/UiAvatar";
 import ProductCard from "components/components/ui/cards/product/ProductHorizontalCard";
 import MainNav from "components/components/ui/layouts/nav/MainNav";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const categories = [
@@ -111,6 +112,10 @@ type PageProps = {
 };
 
 export default function page(props: PageProps) {
+  const category = props.searchParams.category;
+
+  if (!category) return redirect("/?category=women");
+
   return (
     <div>
       <div className="flex snap-mandatory items-center snap-x sm:gap-7 gap-3 overflow-x-scroll">
