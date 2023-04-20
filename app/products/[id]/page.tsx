@@ -3,6 +3,7 @@ import UiProductImageGallery from "components/components/ui/gallery/UiProductIma
 import UiProductColor from "components/components/ui/tabs/buttongroup/UiProductColor";
 import UiProductSize from "components/components/ui/tabs/buttongroup/UiProductSize";
 import Link from "next/link";
+import { BsArrowLeft } from "react-icons/bs";
 
 const images = [
   "https://i.ibb.co/7bQQYkX/jean.jpg",
@@ -21,7 +22,13 @@ export default function page(props: PageProps) {
   return (
     <div className="flex lg:flex-row flex-col gap-10">
       <UiProductImageGallery />
-      <div className="flex lg:w-5/6 flex-col">
+      <div>
+        <Link href="/products" className="flex lg:w-5/6 flex-col">
+          <div className="flex w-max mb-3 gap-3 dark:text-zinc-400 text-zinc-800 fill-current py-2 hover:px-3 transition-all hover:dark:bg-white/10 hover:bg-black/10 rounded items-center">
+            <BsArrowLeft />
+            Back to products
+          </div>
+        </Link>
         <div className="lg:text-5xl text-4xl font-bold capitalize">
           sport wear neon
         </div>
@@ -38,14 +45,17 @@ export default function page(props: PageProps) {
           remaining essentially unchanged.
         </div>
 
-        <div className="flex items-center justify-between flex-wrap mt-6 ">
-          <div className="flex flex-col mt-5">
-            <div className="font-bold">Size:</div>
+        <div className="flex items-center sm:gap-6 justify-between flex-wrap mt-6 ">
+          <>
+            <div className="flex flex-col mt-5">
+              <div className="font-bold">Size:</div>
 
-            <div className="mt-3">
-              <UiProductSize sizes={["S", "M", "L", "XL"]} />
-            </div>
-          </div>
+              <div className="mt-3">
+                <UiProductSize sizes={["S", "M", "L", "XL"]} />
+              </div>
+            </div>{" "}
+          </>
+
           <div className="flex flex-col mt-5">
             <div className="font-bold">Color:</div>
 

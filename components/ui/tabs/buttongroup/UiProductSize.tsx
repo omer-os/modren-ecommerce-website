@@ -25,6 +25,8 @@ export default function UiProductSize(props: UiProductSizeProps) {
   //   }
   // }
 
+  // get context
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
